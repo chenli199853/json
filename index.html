@@ -2,12 +2,11 @@
 <html lang="zh-cn" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    
 
     <button type="button" name="button1" id="button1">请求单个用户</button>
     <button type="button" name="button2" id="button2">请求多个用户</button>
@@ -52,8 +51,13 @@ function loadUsers(){
         console.log(users);
         var output='';
         for(let i in users){
-        
-            output+=users[i].id+users[i].name+users[i].email;
+           output += `
+            <div>
+            编号：<input type="text" name="" value="${users[i].id} " id="user1">
+            性别：<input type="text" name="" value="${users[i].sex}" id="user1"> 
+            身高：<input type="text" name="" value="${users[i].height}" id="user1">
+            </div>
+           `
         }
         document.getElementById("users").innerHTML=output;
 
